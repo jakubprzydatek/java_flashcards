@@ -1,5 +1,6 @@
 package com.flashcards.java_flashcards;
 
+import com.flashcards.java_flashcards.services.FlashcardsService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
