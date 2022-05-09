@@ -15,9 +15,9 @@ public class Category {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    private String categoryName;
+    private String name;
 
-    private String categoryShortName;
+    private String shortName;
 
     @OneToMany(mappedBy = "category")
     private Set<Flashcard> flashcard;
