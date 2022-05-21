@@ -33,7 +33,7 @@ $( "#addFlashcardBtn" ).click(function() {
         type: 'POST',
         url: 'http://localhost:8080/flashcard',
         data: requestJson,
-        success: function(data) { alert('data: ' + data); },
+        success: function(data) { },
         contentType: "application/json",
         dataType: 'json'
     });
