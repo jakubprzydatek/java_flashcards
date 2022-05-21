@@ -1,12 +1,15 @@
 package com.flashcards.java_flashcards.model.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Entity
 @Table(name = "Flashcard")
 public class Flashcard {
@@ -20,9 +23,12 @@ public class Flashcard {
 
     private String content;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @ManyToMany
+    @JoinTable(
+            name = "flashcard_category",
+            joinColumns = @JoinColumn(name = "flashcard_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Category> categories;
 
 
 }

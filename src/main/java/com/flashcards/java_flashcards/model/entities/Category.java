@@ -19,6 +19,6 @@ public class Category {
 
     private String shortName;
 
-    @OneToMany(mappedBy = "category")
+    @ManyToMany(mappedBy = "categories")
     private Set<Flashcard> flashcard;
 }
